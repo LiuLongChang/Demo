@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9058" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9058" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9048"/>
@@ -25,13 +25,9 @@
                                         <action selector="dismissBtnPress:" destination="iN0-l3-epB" eventType="touchUpInside" id="Sta-I3-u5O"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28h-b4-l0Z">
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28h-b4-l0Z">
                                     <rect key="frame" x="266" y="8" width="46" height="30"/>
                                     <animations/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="40" id="fYy-mS-xpV"/>
-                                        <constraint firstAttribute="width" constant="67" id="p0X-QX-zM5"/>
-                                    </constraints>
                                     <state key="normal" title="完成"/>
                                     <connections>
                                         <action selector="finishBtnPress:" destination="iN0-l3-epB" eventType="touchUpInside" id="8DM-dZ-1Wj"/>
@@ -41,28 +37,18 @@
                                     <rect key="frame" x="0.0" y="46" width="320" height="207"/>
                                     <animations/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="210" id="1fH-NL-JzS"/>
+                                        <constraint firstAttribute="height" constant="207" id="w6H-TY-KIy"/>
                                     </constraints>
                                 </pickerView>
                             </subviews>
                             <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="250" id="9SB-B0-BcF"/>
-                                <constraint firstAttribute="bottom" secondItem="lnb-gR-G3n" secondAttribute="bottom" id="S0e-oH-jb5"/>
-                                <constraint firstAttribute="trailing" secondItem="28h-b4-l0Z" secondAttribute="trailing" constant="20" symbolic="YES" id="V8j-II-e5y"/>
-                                <constraint firstItem="lnb-gR-G3n" firstAttribute="leading" secondItem="f37-yi-bt3" secondAttribute="leading" id="Vck-D3-hlq"/>
-                                <constraint firstItem="28h-b4-l0Z" firstAttribute="top" secondItem="f37-yi-bt3" secondAttribute="top" constant="20" symbolic="YES" id="k4q-wP-9K3"/>
-                                <constraint firstAttribute="trailing" secondItem="lnb-gR-G3n" secondAttribute="trailing" id="rc6-Cj-d7e"/>
-                            </constraints>
                         </view>
                     </subviews>
                     <animations/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="f37-yi-bt3" firstAttribute="leading" secondItem="Pws-fM-uOg" secondAttribute="leading" id="JHS-cj-w7k"/>
-                        <constraint firstAttribute="trailing" secondItem="f37-yi-bt3" secondAttribute="trailing" id="r3c-GZ-J9g"/>
-                        <constraint firstAttribute="bottom" secondItem="f37-yi-bt3" secondAttribute="bottom" id="vKs-rK-KKN"/>
+                        <constraint firstItem="f37-yi-bt3" firstAttribute="centerX" secondItem="Pws-fM-uOg" secondAttribute="centerX" id="9Ro-7E-kcP"/>
                     </constraints>
                 </view>
             </subviews>
@@ -70,10 +56,10 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <connections>
-                <outlet property="contentViewHeightCons" destination="9SB-B0-BcF" id="OZQ-q3-uRs"/>
+                <outlet property="contentViewHeightCons" destination="w6H-TY-KIy" id="Ui0-3i-KL2"/>
                 <outlet property="pickerView" destination="lnb-gR-G3n" id="kKd-qX-dtG"/>
             </connections>
-            <point key="canvasLocation" x="213" y="371"/>
+            <point key="canvasLocation" x="215" y="350"/>
         </view>
     </objects>
 </document>

@@ -9,13 +9,14 @@
 import UIKit
 
 
-class AreaObject: NSObject {
+class AreaObject : NSObject {
     
-    var region : String = ""
-    var province : String = ""
-    var city : String = ""
-    var area : String = ""
+    var region : String!
+    var province : String!
+    var city : String!
+    var area : String!
     
+        
 }
 
 
@@ -53,9 +54,14 @@ class AddressChoicePickerView: UIView,UIPickerViewDataSource,UIPickerViewDelegat
         self.pickerView.dataSource = self
         
         self.regionArr = NSArray(contentsOfFile: NSBundle.mainBundle().pathForResource("AreaPlist.plist", ofType: nil)!)!
+        
+        
         self.provinceArr = self.regionArr[0]["provinces"] as! NSArray
         self.cityArr = self.provinceArr[0]["cities"] as! NSArray
         self.areaArr = self.cityArr[0]["areas"] as! NSArray
+        
+        
+        self.locate = AreaObject()
         self.locate?.region = self.regionArr[0]["region"] as! String
         self.locate?.province = self.provinceArr[0]["province"]  as! String
         self.locate?.city = self.cityArr[0]["city"] as! String
@@ -75,6 +81,8 @@ class AddressChoicePickerView: UIView,UIPickerViewDataSource,UIPickerViewDelegat
     }
     
     @IBAction func finishBtnPress(sender: UIButton) {
+        
+        
         if (self.block != nil) {
             self.block!(view: self,btn: sender,locate: self.locate)
         }
@@ -221,6 +229,9 @@ class AddressChoicePickerView: UIView,UIPickerViewDataSource,UIPickerViewDelegat
             self.pickerView.selectRow(0, inComponent: 3, animated: true)
             
             
+            
+            print("\(self.provinceArr[row]["province"])")
+            
             self.locate.province = self.provinceArr[row]["province"] as! String
             self.locate.city = self.cityArr[0]["city"] as! String
             if self.areaArr.count != 0 {
@@ -266,10 +277,10 @@ class AddressChoicePickerView: UIView,UIPickerViewDataSource,UIPickerViewDelegat
     
     
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-        
-    }
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//        
+//    }
     
     
     
